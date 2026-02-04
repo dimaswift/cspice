@@ -1,13 +1,5 @@
-if (FIPS_IMPORT)
 
-fips_begin_lib(cspice)
-
-fips_files(cspice.c)
-
-target_compile_definitions(cspice PUBLIC USE_CSPICE=1)
-
-fips_end_lib()
-
+# --- Kernel fetch (downloads into <repo>/kernels_ if missing) ------------------
 macro(cspice_fetch_kernels)
 
     set(KERNELS_DIR "${CMAKE_SOURCE_DIR}/kernels")
@@ -58,5 +50,3 @@ macro(cspice_copy_kernels)
     endif()
 endmacro()
 
-
-endif()
